@@ -1,3 +1,5 @@
+/* global styles */
+
 html {
   font-size: 14px;
 }
@@ -15,11 +17,21 @@ body {
 }
 
 p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 small {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  min-height: 800px;
+  align-items: center;
 }
 
 .container {
@@ -27,16 +39,17 @@ small {
   flex-direction: column;
   justify-content: center;
   width: 85%;
-  margin: auto;
-}
-
-.searchResultDiv {
-  margin: auto;
 }
 
 .title {
   font-size: 4rem;
   text-align: center;
+}
+
+/* search bar components */
+
+.search-result {
+  margin: auto;
 }
 
 .form {
@@ -54,13 +67,13 @@ small {
   align-self: center;
 }
 
-.searchDiv {
+.search-bar {
   display: flex;
   flex-direction: row;
   margin: 0.2rem;
 }
 
-#movieInput {
+#movie-input {
   border-radius: 15px;
   margin: 0.1rem;
   border: 1px solid #232323;
@@ -70,12 +83,12 @@ small {
   background-color: #ea9e7b;
 }
 
-#movieInput::placeholder {
+#movie-input::placeholder {
   color: #4c0957;
   opacity: 1;
 }
 
-#searchBtn {
+#search-btn {
   border-radius: 8px;
   margin: 0.1rem;
   border: 1px solid #232323;
@@ -86,7 +99,7 @@ small {
   cursor: pointer;
 }
 
-#searchBtn:hover {
+#search-btn:hover {
   background-color: #3d0745;
 }
 
@@ -94,7 +107,9 @@ small {
   outline: none;
 }
 
-.movieContainer {
+/* movie components */
+
+.movie-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -102,8 +117,8 @@ small {
   margin: 2rem 0;
 }
 
-.movieCard {
-  width: 500px;
+.movie-card {
+  width: 350px;
   margin: 1rem;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
   padding: 5px 10px;
@@ -112,45 +127,45 @@ small {
   background-color: #ee9268;
 }
 
-.moviePoster {
-  width: 490px;
+.movie-poster {
+  width: 340px;
+  height: 510px;
   display: flex;
   justify-content: center;
   align-self: center;
 }
 
-.moviePoster img {
+.movie-poster img {
   max-width: 100%;
   height: 100%;
 }
 
-.movieQuickView {
+.movie-quick-view {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0.5rem 0;
 }
 
-.movieTitle {
-  font-size: 2rem;
+.movie-title {
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
-.movieRating {
+.movie-rating {
   margin-left: 0.2rem;
   flex-shrink: 0;
   font-weight: bold;
 }
 
-.movieRelease {
+.movie-release {
   font-weight: bold;
-}
-
-.movieRelease {
   width: fit-content;
 }
 
-@media (max-width: 900px) {
+/* resize elements for smaller resolution */
+
+@media (max-width: 1000px) {
   html {
     font-size: 10px;
   }
@@ -163,20 +178,28 @@ small {
     align-self: flex-start;
   }
 
-  .movieCard {
+  .movie-card {
     width: 200px;
   }
 
-  .moviePoster {
+  .movie-poster {
     width: 190px;
+    height: 285px;
   }
 
   p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
+
+/* for dummy element to align last row of movies */
 
 .hidden {
   visibility: hidden;
   height: 20px;
+}
+
+.credits {
+  align-self: flex-start;
+  border-top: 1px solid black;
 }

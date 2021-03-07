@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import Movie from "./Movie";
-import { movieD } from "../1";
 
 function SearchMovies() {
   const [query, setQuery] = useState("");
-  const [movies, setMovies] = useState(movieD[0].results);
+  const [movies, setMovies] = useState([]);
 
   const search = async (e) => {
     e.preventDefault();
@@ -33,28 +32,28 @@ function SearchMovies() {
   });
 
   return (
-    <div className="searchResultDiv">
+    <div className="search-result">
       <form className="form" onSubmit={search}>
         <label className="label" htmlFor="query">
           Search Movie:
         </label>
-        <div className="searchDiv">
+        <div className="search-bar">
           <input
             type="text"
-            id="movieInput"
+            id="movie-input"
             name="query"
             placeholder="i.e. Tenet"
             value={query}
             onChange={handleChange}
           />
-          <button type="submit" id="searchBtn">
+          <button type="submit" id="search-btn">
             Search
           </button>
         </div>
       </form>
-      <div className="movieContainer">
+      <div className="movie-container">
         {movieComponents}
-        <div className="movieCard hidden"></div>
+        <div className="movie-card hidden"></div>
       </div>
     </div>
   );

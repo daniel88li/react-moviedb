@@ -6,21 +6,21 @@ function Movie(props) {
     ? `https://image.tmdb.org/t/p/w500${props.movie.poster_path}`
     : `https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg`;
   return (
-    <div className="movieCard">
-      <div className="moviePoster">
+    <div className="movie-card">
+      <div className="movie-poster">
         <img src={posterSrc} alt={props.movie.title + " poster"} />
       </div>
-      <div className="movieQuickView">
-        <div className="movieTitle">{props.movie.title}</div>
-        <div className="movieRating">
+      <div className="movie-quick-view">
+        <div className="movie-title">{props.movie.title}</div>
+        <div className="movie-rating">
           <small>RATING: {props.movie.vote_average}</small>
         </div>
       </div>
 
-      <div className="movieRelease">
+      <div className="movie-release">
         <small>RELEASED: {props.movie.release_date}</small>
       </div>
-      <p className="movieDesc">{props.movie.overview}</p>
+      <p className="movie-desc">{props.movie.overview}</p>
     </div>
   );
 }
