@@ -1,0 +1,205 @@
+/* global styles */
+
+html {
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #4c0957;
+  background-color: #e8946d;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+small {
+  font-size: 1.1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  min-height: 800px;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 85%;
+}
+
+.title {
+  font-size: 4rem;
+  text-align: center;
+}
+
+/* search bar components */
+
+.search-result {
+  margin: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: fit-content;
+}
+
+.label {
+  margin: 0.2rem 0.4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: fit-content;
+  align-self: center;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  margin: 0.2rem;
+}
+
+#movie-input {
+  border-radius: 15px;
+  margin: 0.1rem;
+  border: 1px solid #232323;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
+  background-color: #ea9e7b;
+}
+
+#movie-input::placeholder {
+  color: #4c0957;
+  opacity: 1;
+}
+
+#search-btn {
+  border-radius: 8px;
+  margin: 0.1rem;
+  border: 1px solid #232323;
+  font-size: 1.4rem;
+  padding: 0.4rem;
+  background-color: #4c0957;
+  color: #e8946d;
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  background-color: #3d0745;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* movie components */
+
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.movie-card {
+  width: 350px;
+  margin: 1rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ee9268;
+}
+
+.movie-poster {
+  width: 340px;
+  height: 510px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.movie-poster img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.movie-quick-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.movie-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.movie-rating {
+  margin-left: 0.2rem;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.movie-release {
+  font-weight: bold;
+  width: fit-content;
+}
+
+/* resize elements for smaller resolution */
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 10px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .label {
+    align-self: flex-start;
+  }
+
+  .movie-card {
+    width: 200px;
+  }
+
+  .movie-poster {
+    width: 190px;
+    height: 285px;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+/* for dummy element to align last row of movies */
+
+.hidden {
+  visibility: hidden;
+  height: 20px;
+}
+
+.credits {
+  align-self: flex-start;
+  border-top: 1px solid black;
+}
